@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package test;
+
+import "test/a.proto"; // defines (test.opt)
+import "test/b.proto"; // defines (test.opt2)
+
+extend MyMessage2 {
+  optional bool ext = 1000 [(opt).message = {}];
+}
+
+message MyMessage3 {
+  optional float val = 1 [(opt2).message.(ext) = true];
+}

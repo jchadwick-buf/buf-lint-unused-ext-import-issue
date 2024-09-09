@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package test;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FieldOptions {
+  optional Options opt = 1160;
+}
+
+message Options {
+  optional MyMessage message = 1;
+}
+
+message MyMessage {}
